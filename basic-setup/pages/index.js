@@ -4,6 +4,7 @@ import styles from '../styles/Home.module.css';
 import Banner from '../components/banner';
 import Card from '../components/card';
 import { fetchCoffeeStores } from '../lib/coffee-stores';
+import useTrackLocations from '../hooks/use-track-location';
 
 export async function getStaticProps(context) {
   const coffeeStores = await fetchCoffeeStores();
@@ -16,8 +17,11 @@ export async function getStaticProps(context) {
 }
 
 export default function Home({ coffeeStores }) {
+  const { handleTrackLocation, latlng, locationErrorMsg, isLoading } =
+    useTrackLocations();
+
   const handleOnBannerBtnClick = () => {
-    console.log('hi banner button');
+    handleTrackLocation();
   };
 
   return (
@@ -29,7 +33,7 @@ export default function Home({ coffeeStores }) {
 
       <main className={styles.main}>
         <Banner
-          buttonText="View stores nearby"
+          buttonText={isLoading ? 'Locating...' : 'View stores nearby'}
           handleOnClick={handleOnBannerBtnClick}
         />
         <div className={styles.heroImage}>
@@ -39,22 +43,24 @@ export default function Home({ coffeeStores }) {
         {coffeeStores.length > 0 && (
           <>
             {' '}
-            <h2 className={styles.heading2}>Toronto stores</h2>
-            <div className={styles.cardLayout}>
-              {coffeeStores.map(({ name, imgUrl, id }) => {
-                return (
-                  <Card
-                    key={id}
-                    name={name}
-                    to={`/coffee-store/${id}`}
-                    imgUrl={
-                      imgUrl ||
-                      'https://images.unsplash.com/photo-1504753793650-d4a2b783c15e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80'
-                    }
-                    className={styles.card}
-                  />
-                );
-              })}
+            <div className={styles.sectionWrapper}>
+              <h2 className={styles.heading2}>Toronto stores</h2>
+              <div className={styles.cardLayout}>
+                {coffeeStores.map(({ name, imgUrl, id }) => {
+                  return (
+                    <Card
+                      key={id}
+                      name={name}
+                      to={`/coffee-store/${id}`}
+                      imgUrl={
+                        imgUrl ||
+                        'https://images.unsplash.com/photo-1504753793650-d4a2b783c15e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80'
+                      }
+                      className={styles.card}
+                    />
+                  );
+                })}
+              </div>
             </div>
           </>
         )}
