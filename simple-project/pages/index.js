@@ -3,10 +3,9 @@ import Link from 'next/link';
 export default function Home() {
   return (
     <>
-      <Link href="/users">
-        <a>Users</a>
-      </Link>
-      <h1>NextJs pre-rendering</h1>;
+      <h1>NextJs pre-rendering</h1>
+      <Link href="/users">Users </Link>
+      <Link href="/posts">Posts</Link>
     </>
   );
 }
