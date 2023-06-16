@@ -42,7 +42,13 @@ export async function getStaticProps(context) {
     `https://jsonplaceholder.typicode.com/posts/${params.postId}`
   );
   const data = await resp.json();
-  console.log(`Generating page for /posts/${params.postId}`);
+
+  if (!data.id) {
+    return {
+      notFound: true,
+    };
+  }
+
   return { props: { post: data } };
 }
 
