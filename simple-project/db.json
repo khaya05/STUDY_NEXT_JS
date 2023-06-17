@@ -1,4 +1,76 @@
 {
+  "events": [
+    {
+      "id": 1,
+      "title": "Event 1",
+      "description": "Description 1",
+      "category": "sports",
+      "date": "2023-06-20"
+    },
+    {
+      "id": 2,
+      "title": "Event 2",
+      "description": "Description 2",
+      "category": "technology",
+      "date": "2023-06-21"
+    },
+    {
+      "id": 3,
+      "title": "Event 3",
+      "description": "Description 3",
+      "category": "food",
+      "date": "2023-06-22"
+    },
+    {
+      "id": 4,
+      "title": "Event 4",
+      "description": "Description 4",
+      "category": "sports",
+      "date": "2023-06-23"
+    },
+    {
+      "id": 5,
+      "title": "Event 5",
+      "description": "Description 5",
+      "category": "technology",
+      "date": "2023-06-24"
+    },
+    {
+      "id": 6,
+      "title": "Event 6",
+      "description": "Description 6",
+      "category": "food",
+      "date": "2023-06-25"
+    },
+    {
+      "id": 7,
+      "title": "Event 7",
+      "description": "Description 7",
+      "category": "sports",
+      "date": "2023-06-26"
+    },
+    {
+      "id": 8,
+      "title": "Event 8",
+      "description": "Description 8",
+      "category": "technology",
+      "date": "2023-06-27"
+    },
+    {
+      "id": 9,
+      "title": "Event 9",
+      "description": "Description 9",
+      "category": "food",
+      "date": "2023-06-28"
+    },
+    {
+      "id": 10,
+      "title": "Event 10",
+      "description": "Description 10",
+      "category": "sports",
+      "date": "2023-06-29"
+    }
+  ],
   "dashboard": {
     "posts": 5,
     "likes": 100,
