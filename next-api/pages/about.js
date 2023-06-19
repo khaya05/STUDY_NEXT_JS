@@ -1,3 +1,5 @@
+import Footer from '@/layout/Footer';
+
 function About() {
   return <div>About</div>;
 }
@@ -8,7 +10,7 @@ About.getLayout = function PageLayout(page) {
   return (
     <>
       {page}
-      <footer />
+      <Footer />
     </>
   );
 };
