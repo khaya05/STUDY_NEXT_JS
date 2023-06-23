@@ -7,11 +7,16 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  // return (
+  //   <html lang="en">
+  //     <body suppressHydrationWarning={true}>
+  //       <NextAuthProvider>{children}</NextAuthProvider>
+  //     </body>
+  //   </html>
+  // );
   return (
     <html lang="en">
-      <body suppressHydrationWarning={true}>
-        <NextAuthProvider>{children}</NextAuthProvider>
-      </body>
+      <body>{children}</body>
     </html>
   );
 }

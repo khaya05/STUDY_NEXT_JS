@@ -2,5 +2,5 @@ import Layout from "@/components/Layout";
 
 
 export default function Home() {
-  <Layout>test</Layout>
+  <h1>test</h1>
 }

@@ -1,8 +1,8 @@
-import { useSession } from "next-auth/react";
-import Nav from "./Nav";
+import { signIn, useSession } from 'next-auth/react';
+import Nav from './Nav';
 
 export default function Layout() {
-  const { data: session } = useSession({children});
+  const { data: session } = useSession({ children });
   if (!session) {
     return (
       <div className="bg-blue-900 w-screen h-screen flex items-center justify-center">
