@@ -1,4 +1,5 @@
-import DesktopSidebar from "./DesktopSidebar";
+import DesktopSidebar from './DesktopSidebar';
+import MobileFooter from './MobileFooter';
 
 export default async function SideBar({
   children,
@@ -8,9 +9,8 @@ export default async function SideBar({
   return (
     <div className="h-full">
       <DesktopSidebar />
-      <main className="lg:pl-20 h-full">
-        {children}
-      </main>
+      <MobileFooter />
+      <main className="lg:pl-20 h-full">{children}</main>
     </div>
   );
 }

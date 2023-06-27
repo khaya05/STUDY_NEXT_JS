@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import useRoutes from '@/app/hooks/useRoutes';
+import DesktopItem from './DesktopItem';
 
 export default function DesktopSidebar() {
   const routes = useRoutes();
@@ -26,7 +27,34 @@ export default function DesktopSidebar() {
       justify-between
   "
     >
-      DesktopSidebar
+      <nav
+        className="
+          mt-4
+          flex
+          flex-col
+          justify-between
+          "
+      >
+        <ul
+          className="
+            flex
+            flex-col
+            items-center
+            space-y-1
+          "
+        >
+          {routes.map(({ label, href, icon, active, onClick }) => (
+            <DesktopItem
+              key={label}
+              href={href}
+              label={label}
+              icon={icon}
+              active={active}
+              onClick={onClick}
+            />
+          ))}
+        </ul>
+      </nav>
     </div>
   );
 }
