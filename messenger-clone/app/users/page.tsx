@@ -1,7 +1,9 @@
-import React from 'react'
+import { EmptyState } from '../components/EmptyState';
 
-export default function page() {
+export default function Users() {
   return (
-    <div>page</div>
-  )
+    <div className="hidden lg:block lg:pl-80 h-full">
+      <EmptyState />
+    </div>
+  );
 }
