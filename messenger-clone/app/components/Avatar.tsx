@@ -22,22 +22,26 @@ const Avatar: React.FC<Props> = ({ user }) => {
         md:w-11
         "
       >
-        <Image alt="Avatar" src={user?.image || '/images/default.jpg'} fill />
+        <Image
+          alt="Avatar"
+          src={user?.image || '/images/default.jpg'}
+          fill
+        />
       </div>
       <span
         className="
-          absolute
-          block
-          rounded-full
-          bg-green
-          ring-2
-          ring-white
-          top-0
-          right-2
-          h-2
-          w-2
-          md:h-3
-          md:w-3
+            absolute 
+            block 
+            rounded-full 
+            bg-green-500 
+            ring-2 
+            ring-white 
+            top-0 
+            right-0
+            h-2 
+            w-2 
+            md:h-3 
+            md:w-3
         "
       />
     </div>
